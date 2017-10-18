@@ -101,10 +101,10 @@ public class Creature extends ViewGroup {
                 }
             }
             if(child instanceof Node) {
-                //layout
+                //layout child
             }
             else if(child != null /*is muscle*/){
-                //layout
+                //layout child
             }
         }
     }
