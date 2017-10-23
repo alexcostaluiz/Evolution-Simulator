@@ -1,57 +1,34 @@
 package com.costa.alex.evolutionsimulator;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import android.graphics.Bitmap;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 
 /**
  * Created by Alex on 10/18/2017.
- * Population adapter for population container (RecyclerView)
+ * Population adapter for population container (GridView)
  */
-class PopulationAdapter extends RecyclerView.Adapter<PopulationAdapter.CreatureHolder> {
+class PopulationAdapter extends ArrayAdapter<Creature> {
 
     private MainActivity main;
     private ArrayList<Creature> dataSet;
-    private int size;
 
-    class CreatureHolder extends RecyclerView.ViewHolder {
-
-        FrameLayout container;
-
-        CreatureHolder(FrameLayout container) {
-            super(container);
-            this.container = container;
-        }
-    }
-
-    PopulationAdapter(Context context, ArrayList<Creature> dataSet) {
+    PopulationAdapter(Context context, int resource, ArrayList<Creature> creatures) {
+        super(context, resource, creatures);
+        dataSet = creatures;
         main = (MainActivity) context;
-        size  = main.getResources().getDimensionPixelSize(R.dimen.container);
-        this.dataSet = dataSet;
     }
 
+    @NonNull
     @Override
-    public CreatureHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        FrameLayout container = new FrameLayout(main);
-        ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(size, size);
-        container.setLayoutParams(lp);
-        return new CreatureHolder(container);
-    }
-
-    @Override
-    public void onBindViewHolder(CreatureHolder holder, int position) {
-        Creature creature = dataSet.get(position);
-        if(creature.getParent() != null) {
-            ((FrameLayout)creature.getParent()).removeView(creature);
-        }
-        holder.container.addView(creature);
-    }
-
-    @Override
-    public int getItemCount() {
-        return dataSet.size();
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        return dataSet.get(position);
     }
 }

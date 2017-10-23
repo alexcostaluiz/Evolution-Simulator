@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="node">40dp</dimen>
-    <dimen name="muscle_height">15dp</dimen>
-    <dimen name="container">75dp</dimen>
+    <dimen name="node">23dp</dimen>
+    <dimen name="muscle_height">7dp</dimen>
+    <dimen name="container">175dp</dimen>
+    <dimen name="creature">175dp</dimen>
+    <dimen name="creature_outline">2dp</dimen>
 </resources>

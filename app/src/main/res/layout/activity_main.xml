@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
     android:layout_width="match_parent"
@@ -12,81 +13,102 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/orange"
-        android:elevation="4dp">
+        android:elevation="4dp"
+        android:visibility="gone">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Evolution Simulator"
+            android:textColor="#000000"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#616161"/>
+            android:textStyle="bold" />
     </Toolbar>
 
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/population_container"
-        android:layout_below="@id/toolbar"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:elevation="4dp"
+        android:visibility="gone"
+        app:tabBackground="@color/orange"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/red"
+        app:tabIndicatorHeight="2dp"
+        app:tabMaxWidth="264dp"
+        app:tabMinWidth="72dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/red"
+        app:tabTextColor="@android:color/secondary_text_light" />
 
     <View
         android:id="@+id/ground"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:layout_alignParentBottom="true"
         android:background="@color/red"
         android:visibility="gone" />
 
-    <LinearLayout
-        android:id="@+id/initializer"
+    <TextView
+        android:id="@+id/time_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="time"
+        android:textColor="#000000"
+        android:visibility="gone" />
 
-        <EditText
-            android:id="@+id/custom_seed"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp"
-            android:hint="Seed"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textSize="16sp" />
+    <TextView
+        android:id="@+id/distance_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/time_display"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="distance"
+        android:textColor="#000000"
+        android:visibility="gone" />
 
-        <EditText
-            android:id="@+id/max_nodes"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp"
-            android:hint="Max Nodes"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textSize="16sp" />
+    <TextView
+        android:id="@+id/tap_anywhere"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#4effffff"
+        android:clickable="true"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:onClick="startSimulation"
+        android:text="Tap anywhere to begin simulation"
+        android:textColor="#000000"
+        android:textStyle="italic|bold"
+        android:visibility="gone" />
 
-        <EditText
-            android:id="@+id/population_size"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp"
-            android:hint="Population Size"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textSize="16sp" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tab_layout" />
 
-        <Button
-            android:id="@+id/generate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/red"
-            android:onClick="generate"
-            android:text="Generate population"
-            android:textColor="#424242" />
-    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/tab_layout"
+        android:background="@drawable/shadow" />
+
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:text="Copyright © 2017 Alex Costa\nLicensed under MIT License"
+        android:textAlignment="center"
+        android:textSize="10sp"
+        android:textStyle="italic" />
 
 </RelativeLayout>

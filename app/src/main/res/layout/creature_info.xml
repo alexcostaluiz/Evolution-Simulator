@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/creme"
+    android:paddingEnd="8dp"
+    android:paddingStart="24dp">
+
+    <FrameLayout
+        android:id="@+id/creature_image"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp">
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/uuid_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/creature_image"
+        android:text="ID: "
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/uuid_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/uuid_label"
+        android:layout_toEndOf="@id/uuid_label"
+        android:text="G457J-GRE34-HT3H9-23YT5-3454H"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/species_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/uuid_number"
+        android:text="Species: "
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/species_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/species_label"
+        android:layout_toEndOf="@id/species_label"
+        android:text="S33"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/species_name"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <Button
+            android:id="@+id/done_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_alignParentEnd="true"
+            android:onClick="closeCreatureInfo"
+            android:text="Done"
+            android:textColor="#424242" />
+
+        <Button
+            android:id="@+id/simulate_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_toStartOf="@id/done_button"
+            android:layout_marginEnd="8dp"
+            android:onClick="simulateCreature"
+            android:text="Simulate"
+            android:textColor="#424242" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

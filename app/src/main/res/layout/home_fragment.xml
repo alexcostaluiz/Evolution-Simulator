@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/creme">
+
+    <LinearLayout
+        android:id="@+id/initializer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/welcome_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Welcome to\nEvolution Simulator 1.0"
+            android:textColor="#000000"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/custom_seed"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:hint="Seed"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/seed_info"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:onClick="showInfo"
+                android:src="@drawable/ic_info" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/max_nodes"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="Max Nodes"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/node_info"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:onClick="showInfo"
+                android:src="@drawable/ic_info" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/population_size"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="Population Size"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/population_info"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:onClick="showInfo"
+                android:src="@drawable/ic_info" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/generate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/red"
+            android:onClick="generate"
+            android:text="Generate population"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+</RelativeLayout>
