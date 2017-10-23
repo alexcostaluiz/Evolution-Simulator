@@ -37,3 +37,10 @@ This project is still in the middle of production, so UI might change substantia
 
 ## Meta
 
+Alex Costa 
+
+Twitter: [@alexcostaluiz](https://twitter.com/alexcostaluiz) 
+
+Email: alexcostaluiz@outlook.com
+
+Distributed under the MIT License. See [LICENSE](https://github.com/alexcostaluiz/MyInteractiveResume/blob/master/LICENSE) for more information.
