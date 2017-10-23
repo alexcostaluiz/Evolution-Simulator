@@ -28,5 +28,12 @@ This project was inspired by Cary Huang and his Evolution Simulator which you ca
 
 ## Screenshots
 
+This project is still in the middle of production, so UI might change substantially.
+
+![](evolution1small.png) 
+![](evolution2small.png) 
+![](evolution3small.png) 
+![](evolution5small.png)
+
 ## Meta
 
